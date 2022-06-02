@@ -267,9 +267,20 @@ body {
    }
 }
 
+/*==============
+   STRIPE
+==============*/
 
-
-
+.stripe-bg {
+   background-image: linear-gradient(90deg, $color-p-2, $color-p-1, $color-p-2);
+   .stripe {
+      max-width: fit-content;
+      -webkit-text-stroke: 2px $color-w0;
+      color: transparent !important;
+      margin: 0px auto;
+      @include font(title);
+   }
+}
 
 
 
