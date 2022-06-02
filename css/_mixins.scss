@@ -78,6 +78,15 @@ $font-condensed: 'Anton', Arial, Helvetica, sans-serif;
       LAYOUT
 ==============*/
 
+@mixin button() {
+   background-color: $color-e0;
+   transition: .2s;
+   @include font(btn);
+   &:hover {
+      background-color: $color-e1;
+   }
+}
+
 /*
 BASE CODE!!
 
