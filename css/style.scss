@@ -277,6 +277,7 @@ body {
       max-width: fit-content;
       -webkit-text-stroke: 2px $color-w0;
       color: transparent !important;
+      padding: 25px 0px;
       margin: 0px auto;
       @include font(title);
    }
