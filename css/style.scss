@@ -283,9 +283,104 @@ body {
    }
 }
 
+/*==============
+   PLANS
+==============*/
 
+.plans-bg {
+   background-color: $color-b2;
+}
 
-
+.plans {
+   padding: 25px 15px 45px 15px;
+   .plans-btns {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      justify-self: center;
+      display: flex;
+      margin-bottom: 45px;
+      div {
+         width: 200px;
+         background-color: $color-p1;
+         text-align: center;
+         padding: 15px 0px;
+         transition: .2s;
+         cursor: pointer;
+         &:hover {
+            background-color: $color-p2;
+         }
+      }
+      div:not(:last-of-type) {
+         margin-right: 25px;
+      }
+   }
+   .plans-cards {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      .plans-cards-item {
+         flex: 0 1 345px;
+         background-color: $color-b1;
+         box-shadow: 3px 3px 5px 0px rgba(0,0,0, .2);
+         position: relative;
+         &:not(:last-of-type) {
+            margin-bottom: 25px;
+            margin-right: 15px;
+         }
+         .plans-card-icon {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+         }
+         .plans-card-image {
+            margin-bottom: 15px;
+         }
+         .plans-card-title {
+            text-align: center;
+            text-decoration: underline !important;
+            margin-bottom: 15px;
+            @include font(section-title);
+         }
+         .plans-card-price {
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+            @include font(price);
+         }
+         .plans-card-separator {
+            width: calc(100% - 30px);
+            height: 2px;
+            background-color: $color-p2;
+            margin: 0px 15px 25px 15px;
+         }
+         .plans-card-list {
+            margin: 0px 15px 25px 15px;
+            li {
+               display: flex;
+               align-items: flex-start;
+               &:not(:last-of-type) {
+                  margin-bottom: 15px;
+               }
+            }
+            .plans-list-icon {
+               margin-right: 15px;
+               position: relative;
+               top: 5px;
+               img {
+                  width: 20px;
+                  height: 20px;
+               }
+            }
+            .plans-list-icon {
+               display: block;
+            }
+         }
+      }
+   }
+}
 
 
 
