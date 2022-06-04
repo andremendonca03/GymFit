@@ -63,6 +63,15 @@ $font-condensed: 'Anton', Arial, Helvetica, sans-serif;
       letter-spacing: 0.7px;
       text-transform: uppercase;
    }
+   @else if $type == price {
+      font-family: $font-condensed;
+      font-size: 3.8rem;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+   }
    @else if $type == title {
       font-family: $font-condensed;
       font-size: 5.4rem;
