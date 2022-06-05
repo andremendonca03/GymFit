@@ -325,6 +325,7 @@ body {
          flex: 0 1 345px;
          background-color: $color-b1;
          box-shadow: 3px 3px 5px 0px rgba(0,0,0, .2);
+         transition: .2s;
          position: relative;
          &:not(:last-of-type) {
             margin-bottom: 25px;
@@ -377,6 +378,9 @@ body {
             .plans-list-icon {
                display: block;
             }
+         }
+         &:hover {
+            background-color: $color-p-2;
          }
       }
    }

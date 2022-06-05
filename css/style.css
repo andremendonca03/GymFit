@@ -626,6 +626,8 @@ body {
   background-color: #060F1A;
   -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: .2s;
+  transition: .2s;
   position: relative;
 }
 
@@ -707,4 +709,8 @@ body {
 
 .plans .plans-cards .plans-cards-item .plans-card-list .plans-list-icon {
   display: block;
+}
+
+.plans .plans-cards .plans-cards-item:hover {
+  background-color: #1A2638;
 }
