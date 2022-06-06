@@ -467,15 +467,34 @@ body {
       .locations-text-btn {
          display: flex;
          justify-content: flex-start;
+         max-width: fit-content;
          color: $color-e0;
          margin-top: 45px;
+         transition: .2s;
+         position: relative;
          @include font(menu);
+         &::after {
+            content: '';
+            display: block;
+            width: 0px;
+            height: 2px;
+            background-color: currentColor;
+            transition: .2s;
+            position: absolute;
+            bottom: 0px;
+         }
          img {
             width: 20px;
             height: 20px;
             margin-left: 5px;
             position: relative;
             top: -2px;
+         }
+         &:hover {
+            transform: scale(1.05);
+            &::after {
+               width: 100%;
+            }
          }
       }
    }

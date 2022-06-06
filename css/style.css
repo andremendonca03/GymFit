@@ -859,8 +859,14 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   color: #F27405;
   margin-top: 45px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: relative;
   font-family: "Fredoka", Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
@@ -870,12 +876,33 @@ body {
   text-transform: uppercase;
 }
 
+.locations .locations-text .locations-text-btn::after {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 2px;
+  background-color: currentColor;
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: absolute;
+  bottom: 0px;
+}
+
 .locations .locations-text .locations-text-btn img {
   width: 20px;
   height: 20px;
   margin-left: 5px;
   position: relative;
   top: -2px;
+}
+
+.locations .locations-text .locations-text-btn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.locations .locations-text .locations-text-btn:hover::after {
+  width: 100%;
 }
 
 .locations .locations-img {
