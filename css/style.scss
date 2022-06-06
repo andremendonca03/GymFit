@@ -9,7 +9,6 @@ body {
    background-color: $color-b0;
    color: $color-w0;
    @include font(text);
-   height: 500vh;
 }
 
 .page-grid {
@@ -386,9 +385,98 @@ body {
    }
 }
 
+/*==============
+   LOCATIONS
+==============*/
 
-
-
+.locations {
+   margin-top: 90px;
+   margin-bottom: 90px;
+   .locations-title {
+      grid-column: 1 / span 5;
+      grid-row: 1;
+      align-self: start;
+      width: fit-content;
+      padding: 10px 0px;
+      position: relative;
+      @include font(title);
+      &::before, &::after {
+         content: '';
+         display: block;
+         width: 100%;
+         height: 2px;
+         background-color: $color-e0;
+         position: absolute;
+         top: 0px;
+      }
+      &::after {
+         top: unset;
+         bottom: 0px;
+      }
+   }
+   .locations-locals {
+      grid-column: 7 / -1;
+      grid-row: 1;
+      align-self: start;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      justify-content: start;
+      align-items: start;
+      column-gap: 15px;
+      @include font(menu);
+      strong {
+         text-align: center;
+         padding: 25px;
+         transition: .4s;
+         cursor: pointer;
+         &:not(:last-of-type):not(:nth-last-of-type(2)) {
+            border-bottom: 2px solid $color-p-2;
+         }
+         &:hover {
+            transform: scale(1.05);
+         }
+      }
+   }
+   .locations-text {
+      grid-column: 1 / span 6;
+      grid-row: 2;
+      align-self: center;
+      .locations-text-info {
+         margin-bottom: 25px;
+         @include font(menu);
+      }
+      .locations-text-option {
+         display: flex;
+         justify-content: flex-start;
+         margin-bottom: 25px;
+         img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+         }
+      }
+      .locations-text-btn {
+         display: flex;
+         justify-content: flex-start;
+         color: $color-e0;
+         margin-top: 45px;
+         @include font(menu);
+         img {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            position: relative;
+            top: -2px;
+         }
+      }
+   }
+   .locations-img {
+      grid-column: 7 / -1;
+      grid-row: 2;
+      margin-top: 45px;
+   }
+}
 
 
 
