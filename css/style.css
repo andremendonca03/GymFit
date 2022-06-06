@@ -144,6 +144,14 @@ body {
   margin: 0px auto;
 }
 
+.separator {
+  grid-column: 1 / -1;
+  display: block;
+  height: 2px;
+  background-color: #1A2638;
+  margin-bottom: 90px;
+}
+
 /*==============
       HEADER
 ==============*/
