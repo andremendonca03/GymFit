@@ -505,9 +505,62 @@ body {
    }
 }
 
+/*==============
+      START
+==============*/
 
-
-
+.start {
+   margin-bottom: 60px;
+   justify-items: flex-start;
+   align-items: flex-start;
+   .start-title {
+      grid-column: 1 / span 6;
+      grid-row: 1;
+      margin-bottom: 60px;
+      @include font(title);
+   }
+   .start-btn {
+      grid-column: 1 / span 6;
+      grid-row: 2;
+      padding: 15px 45px;
+      margin-bottom: 60px;
+      @include button();
+   }
+   .start-text {
+      grid-column: 1 / span 6;
+      grid-row: 3 ;
+      margin-bottom: 45px;
+      strong {
+         font-weight: 600;
+         color: $color-e0;
+      }
+   }
+   .start-socials {
+      grid-column: 1 / span 6;
+      grid-row: 4;
+      .start-socials-text {
+         margin-bottom: 15px;
+      }
+      .start-socials-container {
+         display: flex;
+         a {
+            width: 32px;
+            height: 32px;
+            transition: .2s;
+            &:hover {
+               transform: scale(1.05);
+            }
+         }
+         a:not(:last-of-type) {
+            margin-right: 15px;
+         }
+      }
+   }
+   .start-img {
+      grid-column: 9 / -1;
+      grid-row: 1 / 5;
+   }
+}
 
 
 

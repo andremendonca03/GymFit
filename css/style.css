@@ -911,3 +911,109 @@ body {
   grid-row: 2;
   margin-top: 45px;
 }
+
+/*==============
+      START
+==============*/
+.start {
+  margin-bottom: 60px;
+  justify-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.start .start-title {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  margin-bottom: 60px;
+  font-family: "Anton", Arial, Helvetica, sans-serif;
+  font-size: 5.4rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.start .start-btn {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  padding: 15px 45px;
+  margin-bottom: 60px;
+  background-color: #F27405;
+  -webkit-transition: .2s;
+  transition: .2s;
+  font-family: "Fredoka", Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 1.9px;
+  text-transform: uppercase;
+}
+
+.start .start-btn:hover {
+  background-color: #FF9F21;
+}
+
+.start .start-text {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  margin-bottom: 45px;
+}
+
+.start .start-text strong {
+  font-weight: 600;
+  color: #F27405;
+}
+
+.start .start-socials {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  -ms-grid-row: 4;
+  grid-row: 4;
+}
+
+.start .start-socials .start-socials-text {
+  margin-bottom: 15px;
+}
+
+.start .start-socials .start-socials-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.start .start-socials .start-socials-container a {
+  width: 32px;
+  height: 32px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.start .start-socials .start-socials-container a:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.start .start-socials .start-socials-container a:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+.start .start-img {
+  grid-column: 9 / -1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  grid-row: 1 / 5;
+}
