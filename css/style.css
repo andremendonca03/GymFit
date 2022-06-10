@@ -172,16 +172,6 @@ body {
   padding: 15px 0px;
 }
 
-.header .header-img a {
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-
-.header .header-img a:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
 .header .header-menu {
   display: -webkit-box;
   display: -ms-flexbox;
