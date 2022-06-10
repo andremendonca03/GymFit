@@ -574,22 +574,22 @@ body {
       }
       span {
          margin-bottom: 5px;
-      }
-      a {
-         display: inline-block;
-         position: relative;
-         &::after {
-            content: '';
-            display: block;
-            width: 0px;
-            height: 2px;
-            background-color: $color-e0;
-            transition: .2s;
-            position: absolute;
-            bottom: 0px;
-         }
-         &:hover::after {
-            width: 100%;
+         a {
+            display: inline-block;
+            position: relative;
+            &::after {
+               content: '';
+               display: block;
+               width: 0px;
+               height: 2px;
+               background-color: $color-e0;
+               transition: .2s;
+               position: absolute;
+               bottom: 0px;
+            }
+            &:hover::after {
+               width: 100%;
+            }
          }
       }
    }

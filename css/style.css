@@ -1038,12 +1038,12 @@ body {
   margin-bottom: 5px;
 }
 
-.footer-bg .footer a {
+.footer-bg .footer span a {
   display: inline-block;
   position: relative;
 }
 
-.footer-bg .footer a::after {
+.footer-bg .footer span a::after {
   content: '';
   display: block;
   width: 0px;
@@ -1055,6 +1055,6 @@ body {
   bottom: 0px;
 }
 
-.footer-bg .footer a:hover::after {
+.footer-bg .footer span a:hover::after {
   width: 100%;
 }
