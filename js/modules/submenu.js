@@ -2,7 +2,6 @@ export default function submenu() {
    const locationsBtn = document.querySelector('[data-local="btn"]');
 
    function checkClickOutside(event) {
-      console.log(event.path);
       const path = event.path.map(item => {
          if (item === locationsBtn) {
             return true;
