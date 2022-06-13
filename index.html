@@ -39,11 +39,21 @@
 
          </div>
 
-         <nav class="header-menu">
-            <a href="./">The Gym</a>
-            <a href="./">Benefits</a>
-            <a href="./">Our Plans</a>
-            <a href="./" class="menu-locations">Locations <span class="menu-locations-detail"></span></a>
+         <nav class="header-menu" data-scroll-to="header-menu">
+            <a href="#gym">The Gym</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#plans">Our Plans</a>
+            <div class="menu-locations" data-local="btn">
+               Locations <span class="menu-locations-detail"></span>
+               <div class="menu-locations-container" data-scroll-to="menu-locations">
+                  <a href="#" data-local="sydney">Sydney Center</a>
+                  <a href="#" data-local="bondi">North Bondi</a>
+                  <a href="#" data-local="deewhy">Dee Why</a>
+                  <a href="#" data-local="mascot">Mascot</a>
+                  <a href="#" data-local="neutralbay">Neutral Bay</a>
+                  <a href="#" data-local="brookvale">Brookvale</a>
+               </div>
+            </div>
             <a href="./registration.html">Start Now</a>
          </nav>
       </header>
@@ -54,7 +64,7 @@
          <img src="./imgs/main.jpg" alt="Equipments at GymFit Gym" />
       </div>
 
-      <section class="gym page-grid">
+      <section class="gym page-grid" id="gym">
          <h1 class="gym-title">
             Your success <br> is our goal!
          </h1>
@@ -85,7 +95,7 @@
          </div>
       </section>
 
-      <section class="benefits page-grid">
+      <section class="benefits page-grid" id="benefits">
          <article class="benefits-support">
             <h2 class="benefits-title">
                Professional Support
@@ -155,7 +165,7 @@
       </div>
 
       <div class="plans-bg">
-         <section class="plans page-grid">
+         <section class="plans page-grid" id="plans">
             <div class="plans-btns">
                <div class="plans-btns-subscriptions">
                   Subscriptions
@@ -293,18 +303,18 @@
          </section>
       </div>
 
-      <section class="locations page-grid">
+      <section class="locations page-grid" data-local="locations">
          <h2 class="locations-title">
             We are <br> erevywhere
          </h2>
 
          <div class="locations-locals">
-            <strong>Sydney Center</strong>
-            <strong>Brookvale</strong>
-            <strong>North Bondi</strong>
-            <strong>Dee Why</strong>
-            <strong>Neutral Bay</strong>
-            <strong>Mascot</strong>
+            <strong data-local="sydney">Sydney Center</strong>
+            <strong data-local="brookvale">Brookvale</strong>
+            <strong data-local="bondi">North Bondi</strong>
+            <strong data-local="deewhy">Dee Why</strong>
+            <strong data-local="neutralbay">Neutral Bay</strong>
+            <strong data-local="mascot">Mascot</strong>
          </div>
 
          <div class="locations-text">
