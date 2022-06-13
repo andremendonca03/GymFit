@@ -847,8 +847,10 @@ body {
 .locations .locations-locals strong {
   text-align: center;
   padding: 25px;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
   cursor: pointer;
 }
 
@@ -861,6 +863,10 @@ body {
           transform: scale(1.05);
 }
 
+.locations .locations-locals strong.active {
+  font-weight: 600 !important;
+}
+
 .locations .locations-text {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
@@ -870,6 +876,9 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
 }
 
 .locations .locations-text .locations-text-info {
@@ -952,11 +961,24 @@ body {
   width: 100%;
 }
 
+.locations .locations-text.active {
+  -webkit-animation: slideRight .4s forwards ease-out;
+          animation: slideRight .4s forwards ease-out;
+}
+
 .locations .locations-img {
   grid-column: 7 / -1;
   -ms-grid-row: 2;
   grid-row: 2;
   margin-top: 45px;
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+}
+
+.locations .locations-img.active {
+  -webkit-animation: slideRight .4s forwards ease-out;
+          animation: slideRight .4s forwards ease-out;
 }
 
 /*==============
@@ -1113,4 +1135,30 @@ body {
 
 .footer-bg .footer span a:hover::after {
   width: 100%;
+}
+
+@-webkit-keyframes slideRight {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    left: -30px;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    left: 0px;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    left: -30px;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    left: 0px;
+  }
 }

@@ -474,7 +474,7 @@ body {
       strong {
          text-align: center;
          padding: 25px;
-         transition: .4s;
+         transition: transform .4s;
          cursor: pointer;
          &:not(:last-of-type):not(:nth-last-of-type(2)) {
             border-bottom: 2px solid $color-p-2;
@@ -482,12 +482,18 @@ body {
          &:hover {
             transform: scale(1.05);
          }
+         &.active {
+            font-weight: 600 !important;
+         }
       }
    }
    .locations-text {
       grid-column: 1 / span 6;
       grid-row: 2;
       align-self: center;
+      opacity: 0;
+      visibility: hidden;
+      position: relative;
       .locations-text-info {
          margin-bottom: 25px;
          @include font(menu);
@@ -535,11 +541,20 @@ body {
             }
          }
       }
+      &.active {
+         animation: slideRight .4s forwards ease-out;   
+      }
    }
    .locations-img {
       grid-column: 7 / -1;
       grid-row: 2;
       margin-top: 45px;
+      opacity: 0;
+      visibility: hidden;
+      position: relative;
+      &.active {
+         animation: slideRight .4s forwards ease-out;
+      }
    }
 }
 
@@ -638,7 +653,17 @@ body {
    }
 }
 
-
+@keyframes slideRight {
+   from {
+      opacity: 0;
+      visibility: hidden;
+      left: -30px;
+   } to {
+      opacity: 1;
+      visibility: visible;
+      left: 0px;
+   }
+}
 
 
 

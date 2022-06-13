@@ -32,8 +32,6 @@ export default function scrollTo() {
       const locationsMenu = document.querySelectorAll('[data-scroll-to="menu-locations"] a');
       const locationsArray = document.querySelectorAll(`strong[data-local]`);
 
-      locationsArray[0].classList.add('active');
-
       locationsMenu.forEach(item => {
          item.addEventListener(`click`, (event) => {
             const sectionTop = document.querySelector(`[data-local="locations"]`).getBoundingClientRect().top;
