@@ -14,6 +14,7 @@ export default function plans() {
       item.classList.add('active');
    }
 
+   plansCards[2].classList.add('active');
    plansBtns[0].classList.add('active');
    plansBtns.forEach(item => {
       item.addEventListener(`click`, (event) => {
