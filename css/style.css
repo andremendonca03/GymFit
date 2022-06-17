@@ -643,13 +643,18 @@ body {
   background-color: #485F6B;
   text-align: center;
   padding: 15px 0px;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
   cursor: pointer;
 }
 
 .plans .plans-btns div:hover {
   background-color: #5E7780;
+}
+
+.plans .plans-btns div.active {
+  text-decoration: underline;
+  border: 2px solid #28384D;
 }
 
 .plans .plans-btns div:not(:last-of-type) {
@@ -671,6 +676,19 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: relative;
+}
+
+.plans .plans-cards.active {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
 }
 
 .plans .plans-cards .plans-cards-item {
@@ -688,6 +706,10 @@ body {
 .plans .plans-cards .plans-cards-item:not(:last-of-type) {
   margin-bottom: 25px;
   margin-right: 15px;
+}
+
+.plans .plans-cards .plans-cards-item:hover {
+  background-color: #1A2638;
 }
 
 .plans .plans-cards .plans-cards-item .plans-card-icon {
@@ -717,6 +739,20 @@ body {
   display: block;
   text-align: center;
   margin-bottom: 15px;
+  font-family: "Anton", Arial, Helvetica, sans-serif;
+  font-size: 3.8rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.plans .plans-cards .plans-cards-item .plans-card-price span {
+  display: inline-block;
+  font-size: 1.6rem !important;
+  letter-spacing: .5px !important;
+  margin-left: -5px;
   font-family: "Anton", Arial, Helvetica, sans-serif;
   font-size: 3.8rem;
   font-weight: 400;
@@ -763,10 +799,6 @@ body {
 
 .plans .plans-cards .plans-cards-item .plans-card-list .plans-list-icon {
   display: block;
-}
-
-.plans .plans-cards .plans-cards-item:hover {
-  background-color: #1A2638;
 }
 
 /*==============
@@ -881,6 +913,11 @@ body {
   position: relative;
 }
 
+.locations .locations-text.active {
+  -webkit-animation: slideRight .4s forwards ease-out;
+          animation: slideRight .4s forwards ease-out;
+}
+
 .locations .locations-text .locations-text-info {
   margin-bottom: 25px;
   font-family: "Fredoka", Arial, Helvetica, sans-serif;
@@ -959,11 +996,6 @@ body {
 
 .locations .locations-text .locations-text-btn:hover::after {
   width: 100%;
-}
-
-.locations .locations-text.active {
-  -webkit-animation: slideRight .4s forwards ease-out;
-          animation: slideRight .4s forwards ease-out;
 }
 
 .locations .locations-img {
@@ -1137,6 +1169,9 @@ body {
   width: 100%;
 }
 
+/*==============
+   ANIMATIONS
+==============*/
 @-webkit-keyframes slideRight {
   from {
     opacity: 0;
@@ -1149,7 +1184,6 @@ body {
     left: 0px;
   }
 }
-
 @keyframes slideRight {
   from {
     opacity: 0;
@@ -1160,5 +1194,39 @@ body {
     opacity: 1;
     visibility: visible;
     left: 0px;
+  }
+}
+
+@-webkit-keyframes slideDown {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    height: 0px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    height: none;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    height: 0px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    height: none;
   }
 }

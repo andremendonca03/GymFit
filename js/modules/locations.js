@@ -40,6 +40,5 @@ export default function locations() {
       itemObserver.observe(item, {
          attributes: true,
       });
-
    });
 }

@@ -349,10 +349,14 @@ body {
          background-color: $color-p1;
          text-align: center;
          padding: 15px 0px;
-         transition: .2s;
+         transition: background-color .2s;
          cursor: pointer;
          &:hover {
             background-color: $color-p2;
+         }
+         &.active {
+            text-decoration: underline;
+            border: 2px solid $color-p-1;
          }
       }
       div:not(:last-of-type) {
@@ -366,6 +370,17 @@ body {
       flex-wrap: wrap;
       justify-content: center;
       align-items: flex-start;
+      height: 0px;
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      transition: .2s;
+      position: relative;
+      &.active {
+         height: auto;
+         opacity: 1;
+         visibility: visible;
+      }
       .plans-cards-item {
          flex: 0 1 345px;
          background-color: $color-b1;
@@ -375,6 +390,9 @@ body {
          &:not(:last-of-type) {
             margin-bottom: 25px;
             margin-right: 15px;
+         }
+         &:hover {
+            background-color: $color-p-2;
          }
          .plans-card-icon {
             position: absolute;
@@ -395,6 +413,13 @@ body {
             text-align: center;
             margin-bottom: 15px;
             @include font(price);
+            span {
+               display: inline-block;
+               font-size: 1.6rem !important;
+               letter-spacing: .5px !important;
+               margin-left: -5px;
+               @include font(price);
+            }
          }
          .plans-card-separator {
             width: calc(100% - 30px);
@@ -423,9 +448,6 @@ body {
             .plans-list-icon {
                display: block;
             }
-         }
-         &:hover {
-            background-color: $color-p-2;
          }
       }
    }
@@ -494,6 +516,9 @@ body {
       opacity: 0;
       visibility: hidden;
       position: relative;
+      &.active {
+         animation: slideRight .4s forwards ease-out;   
+      }
       .locations-text-info {
          margin-bottom: 25px;
          @include font(menu);
@@ -540,9 +565,6 @@ body {
                width: 100%;
             }
          }
-      }
-      &.active {
-         animation: slideRight .4s forwards ease-out;   
       }
    }
    .locations-img {
@@ -653,6 +675,10 @@ body {
    }
 }
 
+/*==============
+   ANIMATIONS
+==============*/
+
 @keyframes slideRight {
    from {
       opacity: 0;
@@ -662,6 +688,20 @@ body {
       opacity: 1;
       visibility: visible;
       left: 0px;
+   }
+}
+
+@keyframes slideDown {
+   0% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-30px);
+      height: 0px;
+   } 100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+      height: none;
    }
 }
 
