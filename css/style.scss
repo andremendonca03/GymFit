@@ -760,11 +760,8 @@ body {
       .gym-photos {
          align-items: start;
          gap: 5px;
-         .gym-photos-left {
-            max-height: 400px;
-            img {
-               height: 400px;
-            }
+         .gym-photos-left img {
+            height: 400px;
          }
       }
    }
@@ -860,7 +857,118 @@ body {
    }
 }
 
+@media only screen and (max-width: 765px) {
+   html {
+      font-size: 53%;
+   }
 
+   .gym {
+      justify-items: center;
+      .gym-title {
+         margin-bottom: 45px;
+      }
+      .gym-text {
+         grid-column: 2 / -2;
+         margin-bottom: 25px;
+      }
+      .gym-btn {
+         grid-column: 1 / -1;
+         grid-row: 3;
+         justify-self: center;
+         margin-bottom: 45px;
+      }
+      .gym-photos {
+         display: flex;
+         flex-direction: column;
+         gap: unset;
+         .gym-photos-left {
+            display: none;
+         }
+         .gym-photos-bottom-right {
+            display: none;
+         }
+      }
+   }
+
+   .benefits {
+      margin-bottom: 45px;
+      article:not(:last-of-type) {
+         margin-bottom: 45px;
+      }
+   }
+
+   .stripe-bg .stripe {
+      font-size: 4.5rem !important;
+   }
+
+   .plans {
+      .plans-btns div {
+         width: 150px;
+         padding: 10px 0px;
+      }
+      .plans-cards {
+         flex-direction: column;
+         justify-content: flex-start;
+         align-items: center;
+         .plans-cards-item {
+            max-width: 345px;
+            &:not(:last-of-type) {
+               margin-right: 0px;
+            }
+         }
+      }
+   }
+
+   .locations {
+      margin-top: 45px;
+      margin-bottom: 45px;
+      .locations-title {
+         grid-column: 1 / -1;
+         justify-self: center;
+      }
+      .locations-locals {
+         grid-column: 1 / -1;
+         grid-row: 2;
+         justify-self: center;
+         margin-bottom: 25px;
+      }
+      .locations-text {
+         grid-column: 1 / -1;
+         justify-self: start;
+         margin-bottom: 25px;
+      }
+      .locations-img {
+         grid-column: 1 / -1;
+         grid-row: 4;
+         &.active {
+            animation: slideRight .4s forwards ease-out;
+         }
+      }
+   }
+
+   .separator {
+      margin-bottom: 45px;
+   }
+
+   .start {
+      .start-title {
+         grid-column: 1 / -1;
+         text-align: center;
+      }
+      .start-btn {
+         grid-column: 1 / -1;
+         justify-self: center;
+         font-size: 2.2rem !important;
+         padding: 20px;
+      }
+      .start-text {
+         grid-column: 1 / -1;
+      }
+      .start-img {
+         display: none;
+      }
+   }
+}
 
 
 
