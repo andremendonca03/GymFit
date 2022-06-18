@@ -21,14 +21,6 @@ body {
    margin: 0px auto;
 }
 
-.separator {
-   grid-column: 1 / -1;
-   display: block;
-   height: 2px;
-   background-color: $color-p-2;
-   margin-bottom: 90px;
-}
-
 /*==============
       HEADER
 ==============*/
@@ -41,7 +33,7 @@ body {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 15px 0px;
+   padding: 15px;
    .header-menu {
       display: flex;
       justify-content: end;
@@ -210,10 +202,12 @@ body {
       .gym-photos-top-right {
          grid-column: 7 / -1;
          grid-row: 1;
+         align-self: stretch;
       }
       .gym-photos-bottom-right {
          grid-column: 7 / -1;
          grid-row: 2;
+         align-self: stretch;
       }
       div {
          overflow: hidden;
@@ -490,10 +484,13 @@ body {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
       justify-content: start;
-      align-items: start;
+      align-items: stretch;
       column-gap: 15px;
       @include font(menu);
       strong {
+         display: flex;
+         justify-content: center;
+         align-items: center;
          text-align: center;
          padding: 25px;
          transition: transform .4s;
@@ -580,6 +577,14 @@ body {
    }
 }
 
+.separator {
+   grid-column: 1 / -1;
+   display: block;
+   height: 2px;
+   background-color: $color-p-2;
+   margin-bottom: 90px;
+}
+
 /*==============
       START
 ==============*/
@@ -634,6 +639,11 @@ body {
    .start-img {
       grid-column: 9 / -1;
       grid-row: 1 / 5;
+      height: 400px;
+      img {
+         object-fit: cover;
+         object-position: 100% 50%;
+      }
    }
 }
 
@@ -692,22 +702,163 @@ body {
 }
 
 @keyframes slideDown {
-   0% {
+   from {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-30px);
-      height: 0px;
-   } 100% {
+      top: -30px;
+   } to {
       opacity: 1;
       visibility: visible;
-      transform: translateY(0px);
-      height: none;
+      top: 0px;
    }
 }
 
+/*==============
+   MEDIA QUERIES
+==============*/
 
+@media only screen and (max-width: 1095px) {
+   .plans .plans-cards .plans-cards-item {
+      &:not(:last-of-type) {
+         margin-right: 0px;
+      }
+      &:first-of-type {
+         margin-right: 45px;
+      }
+   }
+}
 
+@media only screen and (max-width: 900px) {
+   html {
+      font-size: 58%;
+   }
 
+   .main-img {
+      height: 350px;
+      margin-bottom: 45px;
+   }
+
+   .gym {
+      margin-bottom: 60px;
+      .gym-title {
+         grid-column: 1 / -1;
+         margin-bottom: 25px;
+      }
+      .gym-text {
+         grid-column: 1 / span 7;
+         grid-row: 2;
+         margin-bottom: 60px;
+      }
+      .gym-btn {
+         grid-column: 8 / -1;
+         grid-row: 2;
+         justify-self: end;
+         align-self: center;
+         margin-top: 0px;
+         margin-bottom: 60px;
+      }
+      .gym-photos {
+         align-items: start;
+         gap: 5px;
+         .gym-photos-left {
+            max-height: 400px;
+            img {
+               height: 400px;
+            }
+         }
+      }
+   }
+
+   .benefits {
+      margin-bottom: 60px;
+      article {
+         grid-column: 1 / -1;
+         &:not(:last-of-type) {
+            margin-bottom: 60px;
+         }
+      }
+      .benefits-btn {
+         padding: 20px 25px;
+      }
+   }
+
+   .stripe-bg .stripe {
+      padding: 15px;
+   }
+
+   .plans {
+      .plans-btns {
+         margin-bottom: 25px;
+         div {
+            width: 180px;
+         }
+      }
+   }
+
+   .locations {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      .locations-title {
+         margin-bottom: 25px;
+      }
+      .locations-locals {
+         grid-column: 7 / -1;
+         grid-row: 2;
+         align-self: center;
+         strong {
+            padding: 15px;
+         }
+      }
+      .locations-text {
+         grid-column: 1 / -1;
+         grid-row: 3;
+         justify-self: center;
+         .locations-text-info {
+            margin-bottom: 15px;
+         }
+         .locations-text-option {
+            margin-bottom: 15px;
+         }
+         .locations-text-btn {
+            margin-top: 25px;
+         }
+      }
+      .locations-img {
+         grid-column: 1 / span 6;
+         grid-row: 2;
+         height: 250px;
+         margin-top: 0px;
+         margin-bottom: 25px;
+         &.active {
+            animation: slideDown .4s forwards ease-out;
+         }
+         img {
+            object-fit: cover;
+            object-position: 80% 50%;
+         }
+      }
+   }
+
+   .separator {
+      margin-bottom: 60px;
+   }
+
+   .start {
+      margin-bottom: 45px;
+      .start-title {
+         margin-bottom: 45px;
+         br {
+            display: none;
+         }
+      }
+      .start-btn {
+         margin-bottom: 45px;
+      }
+      .start-text {
+         margin-bottom: 15px;
+      }
+   }
+}
 
 
 

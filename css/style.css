@@ -144,14 +144,6 @@ body {
   margin: 0px auto;
 }
 
-.separator {
-  grid-column: 1 / -1;
-  display: block;
-  height: 2px;
-  background-color: #1A2638;
-  margin-bottom: 90px;
-}
-
 /*==============
       HEADER
 ==============*/
@@ -169,7 +161,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px 0px;
+  padding: 15px;
 }
 
 .header .header-menu {
@@ -437,12 +429,18 @@ body {
   grid-column: 7 / -1;
   -ms-grid-row: 1;
   grid-row: 1;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 .gym .gym-photos .gym-photos-bottom-right {
   grid-column: 7 / -1;
   -ms-grid-row: 2;
   grid-row: 2;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 .gym .gym-photos div {
@@ -862,9 +860,9 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-column-gap: 15px;
           column-gap: 15px;
   font-family: "Fredoka", Arial, Helvetica, sans-serif;
@@ -877,6 +875,15 @@ body {
 }
 
 .locations .locations-locals strong {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   padding: 25px;
   -webkit-transition: -webkit-transform .4s;
@@ -1013,6 +1020,14 @@ body {
           animation: slideRight .4s forwards ease-out;
 }
 
+.separator {
+  grid-column: 1 / -1;
+  display: block;
+  height: 2px;
+  background-color: #1A2638;
+  margin-bottom: 90px;
+}
+
 /*==============
       START
 ==============*/
@@ -1117,6 +1132,14 @@ body {
   -ms-grid-row: 1;
   -ms-grid-row-span: 4;
   grid-row: 1 / 5;
+  height: 400px;
+}
+
+.start .start-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 100% 50%;
+     object-position: 100% 50%;
 }
 
 /*==============
@@ -1198,35 +1221,181 @@ body {
 }
 
 @-webkit-keyframes slideDown {
-  0% {
+  from {
     opacity: 0;
     visibility: hidden;
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-    height: 0px;
+    top: -30px;
   }
-  100% {
+  to {
     opacity: 1;
     visibility: visible;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    height: none;
+    top: 0px;
   }
 }
 
 @keyframes slideDown {
-  0% {
+  from {
     opacity: 0;
     visibility: hidden;
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-    height: 0px;
+    top: -30px;
   }
-  100% {
+  to {
     opacity: 1;
     visibility: visible;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    height: none;
+    top: 0px;
+  }
+}
+
+/*==============
+   MEDIA QUERIES
+==============*/
+@media only screen and (max-width: 1095px) {
+  .plans .plans-cards .plans-cards-item:not(:last-of-type) {
+    margin-right: 0px;
+  }
+  .plans .plans-cards .plans-cards-item:first-of-type {
+    margin-right: 45px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 58%;
+  }
+  .main-img {
+    height: 350px;
+    margin-bottom: 45px;
+  }
+  .gym {
+    margin-bottom: 60px;
+  }
+  .gym .gym-title {
+    grid-column: 1 / -1;
+    margin-bottom: 25px;
+  }
+  .gym .gym-text {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-column: 1 / span 7;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    margin-bottom: 60px;
+  }
+  .gym .gym-btn {
+    grid-column: 8 / -1;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-top: 0px;
+    margin-bottom: 60px;
+  }
+  .gym .gym-photos {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    gap: 5px;
+  }
+  .gym .gym-photos .gym-photos-left {
+    max-height: 400px;
+  }
+  .gym .gym-photos .gym-photos-left img {
+    height: 400px;
+  }
+  .benefits {
+    margin-bottom: 60px;
+  }
+  .benefits article {
+    grid-column: 1 / -1;
+  }
+  .benefits article:not(:last-of-type) {
+    margin-bottom: 60px;
+  }
+  .benefits .benefits-btn {
+    padding: 20px 25px;
+  }
+  .stripe-bg .stripe {
+    padding: 15px;
+  }
+  .plans .plans-btns {
+    margin-bottom: 25px;
+  }
+  .plans .plans-btns div {
+    width: 180px;
+  }
+  .locations {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  .locations .locations-title {
+    margin-bottom: 25px;
+  }
+  .locations .locations-locals {
+    grid-column: 7 / -1;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .locations .locations-locals strong {
+    padding: 15px;
+  }
+  .locations .locations-text {
+    grid-column: 1 / -1;
+    -ms-grid-row: 3;
+    grid-row: 3;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .locations .locations-text .locations-text-info {
+    margin-bottom: 15px;
+  }
+  .locations .locations-text .locations-text-option {
+    margin-bottom: 15px;
+  }
+  .locations .locations-text .locations-text-btn {
+    margin-top: 25px;
+  }
+  .locations .locations-img {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1 / span 6;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    height: 250px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+  }
+  .locations .locations-img.active {
+    -webkit-animation: slideDown .4s forwards ease-out;
+            animation: slideDown .4s forwards ease-out;
+  }
+  .locations .locations-img img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 80% 50%;
+       object-position: 80% 50%;
+  }
+  .separator {
+    margin-bottom: 60px;
+  }
+  .start {
+    margin-bottom: 45px;
+  }
+  .start .start-title {
+    margin-bottom: 45px;
+  }
+  .start .start-title br {
+    display: none;
+  }
+  .start .start-btn {
+    margin-bottom: 45px;
+  }
+  .start .start-text {
+    margin-bottom: 15px;
   }
 }
