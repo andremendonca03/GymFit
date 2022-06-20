@@ -34,10 +34,12 @@ body {
    justify-content: space-between;
    align-items: center;
    padding: 15px;
+   position: relative;
    .header-menu {
       display: flex;
       justify-content: end;
       align-items: center;
+      z-index: 1000;
       & > a:not(:last-of-type) {
          margin-right: 25px;
          transition: .4s;
@@ -118,6 +120,9 @@ body {
             }
          }
       }
+   }
+   .header-menu_mobile {
+      display: none;
    }
 }
 
@@ -731,6 +736,67 @@ body {
 @media only screen and (max-width: 900px) {
    html {
       font-size: 58%;
+   }
+
+   .header {
+      .header-img {
+         width: 60px;
+         height: 60px;
+      }
+      .header-menu {
+         display: none;
+         &.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            background-color: $color-p-2;
+            padding: 25px;
+            position: absolute;
+            top: 89px;
+            right: 0px;
+            & > a:not(:last-of-type), & > div {
+               text-align: center;
+               margin-right: 0px;
+               margin-bottom: 25px;
+            }
+            & ~ .header-menu_mobile {
+               transform: rotate(225deg);
+               &::before {
+                  transform: rotate(-90deg);
+                  top: 0px;
+               }
+               &::after {
+                  opacity: 0;
+               }
+            }
+            .menu-locations-container {
+               left: -12px;
+            }
+         }
+      }
+      .header-menu_mobile {
+         display: block;
+         width: 25px;
+         height: 2px;
+         background-color: $color-e0;
+         transition: .2s;
+         position: relative;
+         &::before, &::after {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: $color-e0;
+            transition: .2s;
+            position: absolute;
+            top: -8px;
+         }
+         &::after {
+            top: auto;
+            bottom: -8px;
+         }
+      }
    }
 
    .main-img {
